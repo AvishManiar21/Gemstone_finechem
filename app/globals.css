@@ -1,0 +1,137 @@
+:root {
+  --ex-sz-2xs: 0.25rem;  /* 4px */
+  --ex-sz-xs:  0.5rem;   /* 8px */
+  --ex-sz-sm:  0.75rem;  /* 12px */
+  --ex-sz-md:  1rem;     /* 16px */
+  --ex-sz-lg:  1.5rem;   /* 24px */
+  --ex-sz-xl:  2rem;     /* 32px */
+  --ex-sz-2xl: 3rem;     /* 48px */
+  --ex-sz-3xl: 4rem;     /* 64px */
+
+  --ex-rd-xs: 2px;
+  --ex-rd-sm: 4px;
+  --ex-rd-md: 8px;
+  --ex-rd-lg: 12px;
+  --ex-rd-xl: 16px;
+  --ex-rd-full: 9999px;
+
+  --ex-fs-xs: 0.75rem;   /* 12px */
+  --ex-fs-sm: 0.875rem;  /* 14px */
+  --ex-fs-md: 1rem;      /* 16px */
+  --ex-fs-lg: 1.125rem;  /* 18px */
+  --ex-fs-xl: 1.25rem;   /* 20px */
+  --ex-fs-2xl: 1.5rem;   /* 24px */
+  --ex-fs-3xl: 1.875rem; /* 30px */
+  --ex-fs-4xl: 2.25rem;  /* 36px */
+
+  --ex-ic-sm: 1rem;     /* 16px */
+  --ex-ic-md: 1.5rem;   /* 24px */
+  --ex-ic-lg: 2rem;     /* 32px */
+
+  --ex-btn-h-sm: 2rem;  /* 32px */
+  --ex-btn-h-md: 2.5rem;/* 40px */
+  --ex-btn-h-lg: 3rem;  /* 48px */
+
+  --ex-input-h: 2.5rem; /* default input height */
+
+  --ex-bp-xs: 360px;
+  --ex-bp-sm: 480px;
+  --ex-bp-md: 768px;
+  --ex-bp-lg: 1024px;
+  --ex-bp-xl: 1280px;
+  --ex-bp-2xl: 1440px;
+}
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* Takes remaining space */
+  overflow: auto; /* if scroll is needed inside */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-align: center;
+  line-height: var(--ex-sz-md);
+  margin-bottom: var(--ex-sz-xs)!important;
+}
+
+h1 { font-size:var(--ex-fs-4xl);margin: unset; }
+h2 { font-size: var(--ex-fs-3xl);margin: unset; }
+h3 { font-size: var(--ex-fs-2xl);margin: unset; }
+h4 { font-size: var(--ex-fs-xl); margin: unset;}
+h5 { font-size: var(--ex-fs-lg);margin: unset; }
+h6 { font-size: var(--ex-fs-md);margin: unset; }
+
+/* === Paragraphs === */
+p {
+  font-size: var(--ex-fs-md);
+  margin-bottom: var(--ex-sz-md);
+}
+
+main.homepage {
+  font-family: system-ui, sans-serif;
+  color: #111;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.headline {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
