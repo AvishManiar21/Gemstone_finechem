@@ -189,6 +189,10 @@ const handleLogin = async () => {
         message: `Welcome ${response.user?.name || response.user?.email}`,
         type: 'success',
       });
+      // Redirect to dashboard after successful login
+      setTimeout(() => {
+        window.location.href = '/shop';
+      }, 1000);
     }
   } catch (error) {
     console.error('Login error:', error);
@@ -252,6 +256,10 @@ const handleOtpVerify = async () => {
       await handleLogin();
     } else {
       setMode('login');
+      // Redirect to login after successful registration verification
+      setTimeout(() => {
+        window.location.href = '/auth';
+      }, 1000);
     }
   } else {
     notifyGlobal({
@@ -378,6 +386,10 @@ const handleGoogleLogin = async (credentialResponse) => {
       message: `Hello ${response.user?.name || response.user?.email || 'User'}`,
       type: 'success',
     });
+    // Redirect to dashboard after successful Google login
+    setTimeout(() => {
+      window.location.href = '/shop';
+    }, 1000);
   } else if (response.action === 'set-password') {
     setForgotData(prev => ({
       ...prev,

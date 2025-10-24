@@ -14,8 +14,7 @@ export default function Header() {
 
   const handleLogout = async () => {
     try {
-      await fetch('/api/auth/logout', { method: 'POST' });
-      logout(); // clears localStorage and context
+      await logout(); // This now handles the redirect automatically
       notifyGlobal({
         title: 'Logged out',
         message: 'You have been logged out successfully.',
@@ -59,31 +58,30 @@ export default function Header() {
 
   const activePath = typeof window !== 'undefined' ? window.location.pathname : '/';
 
-
   if (!isReady) return null;
 
   return (
     <>
       <ExNavbar MenuItems={MenuItems} onrouteChange={handleRoute} activeRoute={activePath}>
         <div slot="prepend">
-<Image src={'/logo.png'} alt="Logo" width={40} height={40} className='icon'/>
+          <Image src={'/logo.png'} alt="Logo" width={40} height={40} className='icon'/>
         </div>
         <div slot="append">
-       <div className='append'>
-        <ExThemeswitcher/>
-           {user ? (
-            <div className='user-info'>
-              <p className='info'>Welcome, {user.name || user.email}</p>
-              <ExButton onClick={handleLogout}>
-                Logout
+          <div className='append'>
+            <ExThemeswitcher/>
+            {user ? (
+              <div className='user-info'>
+                <p className='info'>Welcome, {user.name || user.email}</p>
+                <ExButton onClick={handleLogout}>
+                  Logout
+                </ExButton>
+              </div>
+            ) : (
+              <ExButton onClick={() => window.location.href = '/auth'}>
+                Login
               </ExButton>
-            </div>
-          ) : (
-            <ExButton onClick={() => window.location.href = '/auth'}>
-              Login
-            </ExButton>
-          )}
-       </div>
+            )}
+          </div>
         </div>
       </ExNavbar>
     </>
